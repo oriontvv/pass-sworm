@@ -26,3 +26,7 @@ rustc-ice-*.txt
 /target
 .cargo/config.toml
 .tclaude-docker.status
+
+**/*.psw
+**/*.psw\.*
+**/*.bak.*

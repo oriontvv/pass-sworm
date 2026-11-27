@@ -1,0 +1,27 @@
+name: Release
+
+# Triggered by a semver tag push without a `v` prefix (e.g. `git tag 0.1.0 && git push origin 0.1.0`).
+# The tag must equal the version in Cargo.toml.
+#
+# This crate is a dprint Wasm plugin and has no binary, so the shared workflow builds plugin.wasm and
+# schema.json and attaches them to the GitHub Release, which is what plugins.dprint.dev serves.
+on:
+  push:
+    tags:
+      - "*.*.*"
+
+jobs:
+  release:
+    uses: oriontvv/rust-workflows/.github/workflows/release.yml@master
+    with:
+      binary-name: pass-sworm
+      enable-binaries: false
+      enable-dprint-plugin: true
+      enable-crates: true
+      enable-docker: false
+      enable-homebrew: false
+      enable-wix-msi: false
+    permissions:
+      contents: write
+    secrets:
+      CARGO_TOKEN: ${{ secrets.CARGO_TOKEN }}
