@@ -24,7 +24,7 @@ rpassword = "7"
 serde = { version = "1", features = ["derive"] }
 subtle = "2"
 thiserror = "2"
-toml = "0.8"
+toml = "1.2"
 tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time", "io-util"] }
 uuid = { version = "1", features = ["v7", "serde"] }
 zeroize = { version = "1", features = ["derive"] }
