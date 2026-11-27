@@ -152,7 +152,7 @@ pub fn seal(key: &Key, nonce: &[u8; NONCE_LEN], aad: &[u8], plaintext: &[u8]) ->
     let cipher = XChaCha20Poly1305::new(key.bytes().into());
     cipher
         .encrypt(
-            XNonce::from_slice(nonce),
+            &XNonce::from(*nonce),
             Payload {
                 msg: plaintext,
                 aad,
@@ -165,7 +165,7 @@ pub fn open(key: &Key, nonce: &[u8; NONCE_LEN], aad: &[u8], ciphertext: &[u8]) -
     let cipher = XChaCha20Poly1305::new(key.bytes().into());
     cipher
         .decrypt(
-            XNonce::from_slice(nonce),
+            &XNonce::from(*nonce),
             Payload {
                 msg: ciphertext,
                 aad,
