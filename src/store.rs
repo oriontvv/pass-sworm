@@ -1,7 +1,6 @@
 //! Persistent storage: an exclusive lock, atomic saves and rolling backups.
 
 use anyhow::{Context, Result, bail};
-use fs4::fs_std::FileExt;
 use std::collections::HashSet;
 use std::fs::{self, File, OpenOptions};
 use std::io::{Read, Write};
@@ -59,7 +58,7 @@ impl VaultStore {
         if locked.contains(&key) {
             bail!("vault {} is already open in this process", path.display());
         }
-        if let Err(e) = lock.try_lock_exclusive() {
+        if let Err(e) = lock.try_lock() {
             return Err(anyhow::Error::new(e).context(format!(
                 "vault {} is already open in another instance",
                 path.display()
