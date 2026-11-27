@@ -14,7 +14,7 @@ chacha20poly1305 = "0.10"
 ciborium = "0.2"
 clap = { version = "4", features = ["derive"] }
 crossterm = { version = "0.28", features = ["event-stream"] }
-directories = "5"
+directories = "6"
 fs4 = "0.12"
 futures = "0.3"
 fuzzy-matcher = "0.3"
