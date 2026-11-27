@@ -13,7 +13,6 @@ use anyhow::{Result, bail};
 use argon2::{Algorithm, Argon2, Params, Version};
 use chacha20poly1305::aead::{Aead, Payload};
 use chacha20poly1305::{KeyInit, XChaCha20Poly1305, XNonce};
-use rand::RngCore;
 use zeroize::{Zeroize, ZeroizeOnDrop};
 
 pub const KEY_LEN: usize = 32;
@@ -33,7 +32,7 @@ pub const CTX_SYNC_NAMESPACE: &str = "pass-sworm/v1/sync-namespace";
 
 pub fn random_bytes<const N: usize>() -> [u8; N] {
     let mut out = [0u8; N];
-    rand::rngs::OsRng.fill_bytes(&mut out);
+    rand::fill(&mut out);
     out
 }
 

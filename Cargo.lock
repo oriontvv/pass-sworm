@@ -1491,7 +1491,7 @@ dependencies = [
  "ipnet",
  "jni 0.22.4",
  "once_cell",
- "rand 0.10.4",
+ "rand",
  "thiserror 2.0.21",
  "tinyvec",
  "tracing",
@@ -1766,7 +1766,7 @@ dependencies = [
  "hyper",
  "hyper-util",
  "log",
- "rand 0.10.4",
+ "rand",
  "thiserror 2.0.21",
  "tokio",
  "url",
@@ -1890,7 +1890,7 @@ dependencies = [
  "pin-project",
  "portable-atomic",
  "portmapper",
- "rand 0.10.4",
+ "rand",
  "reqwest",
  "rustc-hash",
  "rustls",
@@ -1920,7 +1920,7 @@ dependencies = [
  "ed25519-dalek",
  "getrandom 0.4.3",
  "n0-error",
- "rand 0.10.4",
+ "rand",
  "serde",
  "tracing",
  "url",
@@ -1941,7 +1941,7 @@ dependencies = [
  "n0-error",
  "n0-future",
  "portable-atomic",
- "rand 0.10.4",
+ "rand",
  "rustls",
  "simple-dns",
  "strum",
@@ -2043,7 +2043,7 @@ dependencies = [
  "percent-encoding",
  "pin-project",
  "postcard",
- "rand 0.10.4",
+ "rand",
  "reqwest",
  "rustls",
  "rustls-pki-types",
@@ -2402,7 +2402,7 @@ dependencies = [
  "n0-error",
  "n0-future",
  "ndk-context",
- "rand 0.10.4",
+ "rand",
  "reqwest",
  "rustc-hash",
  "rustls",
@@ -2469,7 +2469,7 @@ dependencies = [
  "lru 0.19.2",
  "n0-error",
  "noq-udp",
- "rand 0.10.4",
+ "rand",
  "serde",
  "serde_bencode",
  "serde_bytes",
@@ -2674,7 +2674,7 @@ dependencies = [
  "getrandom 0.4.3",
  "identity-hash",
  "lru-slab",
- "rand 0.10.4",
+ "rand",
  "rand_pcg",
  "ring",
  "rustc-hash",
@@ -3010,7 +3010,7 @@ dependencies = [
  "iroh",
  "iroh-mainline-address-lookup",
  "iroh-mdns-address-lookup",
- "rand 0.8.8",
+ "rand",
  "ratatui",
  "rpassword",
  "serde",
@@ -3272,7 +3272,7 @@ dependencies = [
  "n0-future",
  "netwatch",
  "num_enum",
- "rand 0.10.4",
+ "rand",
  "serde",
  "smallvec",
  "socket2",
@@ -3320,15 +3320,6 @@ name = "powerfmt"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4a6394b9e965e73d0a289ee54f589087e2c676aedf60885baf52c76b771e4958"
-
-[[package]]
-name = "ppv-lite86"
-version = "0.2.21"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "85eae3c4ed2f50dcfe72643da4befc30deadb458a9b590d720cde2f2b1e97da9"
-dependencies = [
- "zerocopy",
-]
 
 [[package]]
 name = "proc-macro-crate"
@@ -3402,17 +3393,6 @@ checksum = "f8dcc9c7d52a811697d2151c701e0d08956f92b0e24136cf4cf27b57a6a0d9bf"
 
 [[package]]
 name = "rand"
-version = "0.8.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e058c7de0b26af77780c769414d6257830bb240f3c38477dbc2c16e5f54d6d4c"
-dependencies = [
- "libc",
- "rand_chacha",
- "rand_core 0.6.4",
-]
-
-[[package]]
-name = "rand"
 version = "0.10.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8f6fa277c67e6ea590466f04c3fe82cb509f0864fe470643e5570de9514a9b11"
@@ -3423,23 +3403,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "rand_chacha"
-version = "0.3.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e6c10a63a0fa32252be49d21e7709d4d4baf8d231c2dbce1eaa8141b9b127d88"
-dependencies = [
- "ppv-lite86",
- "rand_core 0.6.4",
-]
-
-[[package]]
 name = "rand_core"
 version = "0.6.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c"
-dependencies = [
- "getrandom 0.2.17",
-]
 
 [[package]]
 name = "rand_core"
@@ -4201,7 +4168,7 @@ checksum = "c349937bc28998d12eed97a4fabcf71e78e15342b10af81eb99e6e0c248ba5fd"
 dependencies = [
  "acto",
  "hickory-proto",
- "rand 0.10.4",
+ "rand",
  "socket2",
  "thiserror 2.0.21",
  "tokio",
@@ -4547,7 +4514,7 @@ dependencies = [
  "getrandom 0.4.3",
  "http",
  "httparse",
- "rand 0.10.4",
+ "rand",
  "ring",
  "rustls-pki-types",
  "sha1_smol",
