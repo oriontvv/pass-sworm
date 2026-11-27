@@ -4,7 +4,7 @@
 //! character from each class as long as the requested length allows it. Character
 //! classes can drop visually ambiguous glyphs (`Il1O0o`) when asked to.
 
-use rand::distributions::{Distribution, Uniform};
+use rand::distr::{Distribution, Uniform};
 use rand::seq::SliceRandom;
 
 const LOWER: &str = "abcdefghijklmnopqrstuvwxyz";
@@ -31,14 +31,15 @@ pub fn generate(length: usize, symbols: bool, avoid_ambiguous: bool) -> String {
         return String::new();
     }
 
-    let mut rng = rand::thread_rng();
+    let mut rng = rand::rng();
     let mut out: Vec<char> = Vec::with_capacity(length);
 
     // One character per class first, so enabling symbols actually yields one.
     for class in classes.iter().take(length) {
-        out.push(class[Uniform::new(0, class.len()).sample(&mut rng)]);
+        let dist = Uniform::new(0, class.len()).unwrap();
+        out.push(class[dist.sample(&mut rng)]);
     }
-    let uniform = Uniform::new(0, pool.len());
+    let uniform = Uniform::new(0, pool.len()).unwrap();
     while out.len() < length {
         out.push(pool[uniform.sample(&mut rng)]);
     }
